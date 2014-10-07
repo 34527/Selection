@@ -10,17 +10,35 @@ day = int(input("Please enter the day: "))
 month = int(input("Please enter the month: "))
 year = int(input("Please enter the year: "))
 
+leap_year = 0
+leap_year_century = 0
+
+if year % 100 == 0:
+    if year % 400 ==0:
+        leap_year_century = True
+    else:
+        leap_year_century = False
+elif year % 4:
+    leap_year = True
+else:
+    leap_year = False
+        
 if day >= 32 or month >=13 or day == 0 or year >= 100:
     print("Invalid date")
 else:
-    if day == 1 or day == 21 or day == 31:
-        day_formatted = ("{0}st".format(day))
-    elif day == 2 or day == 22:
-        day_formatted = ("{0}nd".format(day))
-    elif day == 3 or day == 23:
-        day_formatted = ("{0}rd".format(day))
+    if leap_year_century = True or leap_year = True:
+        if day == 1 or day == 21 or day == 31:
+            day_formatted_leap = ("{0}st".format(day))
+        elif day == 2 or day == 22:
+            day_formatted_leap = ("{0}nd".format(day))
+        elif day == 3 or day == 23:
+            day_formatted_leap = ("{0}rd".format(day))
+        else:
+            day_formatted_leap = ("{0}th".format(day))
     else:
-        day_formatted = ("{0}th".format(day))
+        
+        
+    
 
     if month == 1:
         month_formatted = ("January")
@@ -53,4 +71,6 @@ else:
         year_formatted = ("20{0}".format(year))
         
     print("The date chosen is the {0} of {1}, {2}".format(day_formatted, month_formatted, year_formatted))
+
+ 
 
